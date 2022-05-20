@@ -19,7 +19,7 @@ class CategoryIconDesignLayout extends StatelessWidget {
           width: Get.width / 6,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
-            color: whiteColor,
+            color: Colors.white,
             border: Border.all(color: greyColor.withOpacity(.6)),
           ),
           child: Icon(

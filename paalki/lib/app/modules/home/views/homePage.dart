@@ -15,6 +15,26 @@ class HomePage extends StatelessWidget {
       width: Get.width,
       child: Column(
         children: [
+          AppBar(
+            centerTitle: true,
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'Dhaka',
+                  style: defaultNORMALTextStyle.copyWith(
+                    color: greyColor,
+                  ),
+                ),
+                Icon(
+                  FontAwesomeIcons.caretDown,
+                  color: greyColor,
+                  size: 15,
+                )
+              ],
+            ),
+          ),
           Container(
             height: Get.width / 6 + 20,
             padding: EdgeInsets.symmetric(horizontal: 20),
@@ -233,7 +253,7 @@ class HomePage extends StatelessWidget {
             height: 10,
           ),
           Container(
-            height: 25,
+            height: 20,
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -250,10 +270,9 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            height: 210,
+          SizedBox(
+            height: 205,
             width: Get.width,
-            // color: Colors.blueAccent,
             child: SingleChildScrollView(
               physics: BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
@@ -262,118 +281,138 @@ class HomePage extends StatelessWidget {
                   SizedBox(
                     width: 10,
                   ),
-                  ListView.builder(
-                    itemCount: 5,
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: EdgeInsets.only(left: 10),
-                        child: Container(
-                          height: 200,
-                          width: 150,
+                  SizedBox(
+                    height: 200,
+                    child: ListView.builder(
+                      itemCount: 5,
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      physics: NeverScrollableScrollPhysics(),
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: EdgeInsets.only(left: 10),
                           child: Card(
-                            elevation: 5,
+                            elevation: 6,
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Column(
-                              children: [
-                                Flexible(
-                                  flex: 1,
-                                  child: Container(
-                                    height: double.infinity,
-                                    width: double.infinity,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(8),
-                                      child: Image.network(
-                                        'https://images.unsplash.com/photo-1627490631692-3eb501e21cd1?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470',
-                                        fit: BoxFit.cover,
+                                borderRadius: BorderRadius.circular(8)),
+                            child: Container(
+                              height: 200,
+                              width: 150,
+                              // decoration: BoxDecoration(
+                              //   borderRadius: BorderRadius.circular(8),
+                              //   color: Colors.white,
+                              //   border: Border.all(color: greyColor),
+                              // ),
+                              child: Column(
+                                children: [
+                                  Flexible(
+                                    flex: 1,
+                                    child: Container(
+                                      height: double.infinity,
+                                      width: double.infinity,
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(8),
+                                        child: Image.network(
+                                          'https://images.unsplash.com/photo-1627490631692-3eb501e21cd1?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470',
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                Flexible(
-                                  flex: 1,
-                                  child: Container(
-                                    padding: EdgeInsets.all(5),
-                                    height: double.infinity,
-                                    width: double.infinity,
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Gec Convention',
-                                          style: defaultBOLDTextStyle,
-                                        ),
-                                        SizedBox(
-                                          height: 2,
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Icon(
-                                              FontAwesomeIcons.locationDot,
-                                              color: blackColor,
-                                              size: 15,
-                                            ),
-                                            SizedBox(
-                                              width: 2,
-                                            ),
-                                            Text(
-                                              'Gec Convention',
-                                              style: defaultNORMALTextStyle
-                                                  .copyWith(
-                                                fontSize: 13,
-                                                color: greyColor,
+                                  Flexible(
+                                    flex: 1,
+                                    child: Container(
+                                      padding: EdgeInsets.all(10),
+                                      height: double.infinity,
+                                      width: double.infinity,
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Gec Convention',
+                                            style: defaultBOLDTextStyle,
+                                          ),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Icon(
+                                                FontAwesomeIcons.locationDot,
+                                                color: blackColor,
+                                                size: 15,
                                               ),
-                                            ),
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          height: 2,
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Icon(
-                                              FontAwesomeIcons.star,
-                                              color: primaryColor,
-                                              size: 15,
-                                            ),
-                                            SizedBox(
-                                              width: 5,
-                                            ),
-                                            Text(
-                                              '4.5',
-                                              style: defaultBOLDTextStyle
-                                                  .copyWith(
-                                                fontSize: 13,
+                                              SizedBox(
+                                                width: 2,
+                                              ),
+                                              Text(
+                                                'Gec Convention',
+                                                style: defaultNORMALTextStyle
+                                                    .copyWith(
+                                                  fontSize: 13,
+                                                  color: greyColor,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Icon(
+                                                FontAwesomeIcons.star,
                                                 color: primaryColor,
+                                                size: 15,
                                               ),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
+                                              SizedBox(
+                                                width: 5,
+                                              ),
+                                              Text(
+                                                '4.5',
+                                                style: defaultBOLDTextStyle
+                                                    .copyWith(
+                                                  fontSize: 13,
+                                                  color: primaryColor,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                '৳',
+                                                style: defaultBOLDTextStyle,
+                                              ),
+                                              SizedBox(
+                                                width: 5,
+                                              ),
+                                              Text(
+                                                '1,45,000',
+                                                style: defaultBOLDTextStyle,
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                )
-                              ],
+                                  )
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                      );
-                    },
+                        );
+                      },
+                    ),
                   ),
                   SizedBox(
                     width: 20,

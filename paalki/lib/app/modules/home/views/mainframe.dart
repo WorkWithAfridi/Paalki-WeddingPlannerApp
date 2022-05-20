@@ -21,7 +21,7 @@ class _MainframeState extends State<Mainframe> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50),
+        preferredSize: Size.fromHeight(0),
         child: AppBar(
           centerTitle: true,
           title: Row(
