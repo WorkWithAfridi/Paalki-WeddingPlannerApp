@@ -172,13 +172,13 @@ class SignupScreen extends StatelessWidget {
                         InkWell(
                           onTap: () {},
                           child: Container(
-                            height: 50,
+                            height: 45,
                             width: Get.width / 3,
                             decoration: BoxDecoration(
                                 color: whiteColor,
                                 borderRadius: BorderRadius.circular(7),
                                 border: Border.all(
-                                    color: Colors.blueAccent, width: 1.5)),
+                                    color: greyColor, width: 1.5)),
                             alignment: Alignment.center,
                             child: Text("Facebook",
                                 style: defaultBOLDTextStyle.copyWith(
@@ -191,13 +191,13 @@ class SignupScreen extends StatelessWidget {
                         InkWell(
                           onTap: () {},
                           child: Container(
-                            height: 50,
+                            height: 45,
                             width: Get.width / 3,
                             decoration: BoxDecoration(
                                 color: whiteColor,
                                 borderRadius: BorderRadius.circular(7),
                                 border:
-                                    Border.all(color: Colors.red, width: 1.5)),
+                                    Border.all(color: greyColor, width: 1.5)),
                             alignment: Alignment.center,
                             child: Text("Google",
                                 style: defaultBOLDTextStyle.copyWith(

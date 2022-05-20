@@ -4,7 +4,7 @@ final primaryColor = Color(0xffFF3956);
 final blackColor = Color(0xff444444);
 final greyColor = Color(0xff999999);
 final lightGreyColor = Color(0xffD9D9D9);
-final whiteColor = Color(0xffFFFFFF);
+final whiteColor = Color(0xffFCFCFC);
 
 String appName = "PaalKi";
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:paalki/app/widgets/customCircularProgressLoadingIndicator.dart';
 
 import '../../../data/constants.dart';
 import '../../../widgets/customBackButton.dart';
@@ -52,32 +53,49 @@ class OtpVerificationScreen extends StatelessWidget {
                 height: 10,
               ),
               CustomTextField(
-                  textEditingController:
-                      controller.otpVerificationCodeTextEditingController,
-                  hintText: "OTP Code",
-                  textInputType: TextInputType.number,
-                  maxLines: 1),
+                textEditingController:
+                    controller.otpVerificationCodeTextEditingController,
+                hintText: "OTP Code",
+                textInputType: TextInputType.number,
+                maxLines: 1,
+              ),
               const SizedBox(
                 height: 10,
               ),
+              Text(
+                "Didn't receive a code?",
+                style: defaultNORMALTextStyle.copyWith(color: greyColor),
+              ),
+              Text(
+                "Resent it",
+                style: defaultBOLDTextStyle.copyWith(color: primaryColor),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
               InkWell(
-                onTap: () {},
-                child: Container(
-                  height: 50,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: primaryColor,
-                    borderRadius: BorderRadius.circular(7),
-                  ),
-                  alignment: Alignment.center,
-                  child: Text(
-                    "Continue",
-                    style: TextStyle(
-                      color: whiteColor,
-                      fontWeight: FontWeight.w700,
+                onTap: controller.onOTPContinueButtonClick,
+                child: Obx(() {
+                  return Container(
+                    height: 50,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: primaryColor,
+                      borderRadius: BorderRadius.circular(7),
                     ),
-                  ),
-                ),
+                    alignment: Alignment.center,
+                    child:
+                        controller.showOTPContinueButtonLoadingAnimation.value
+                            ? CustomCircularProgressLoadingIndicator()
+                            : Text(
+                                "Continue",
+                                style: TextStyle(
+                                  color: whiteColor,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                  );
+                }),
               ),
             ],
           ),

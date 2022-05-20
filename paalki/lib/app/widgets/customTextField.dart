@@ -37,7 +37,13 @@ class CustomTextField extends StatelessWidget {
         hintText: hintText,
         hintStyle: defaultNORMALTextStyle.copyWith(color: greyColor),
         border: inputBorder,
-        focusedBorder: inputBorder,
+        focusedBorder: OutlineInputBorder(
+          borderSide: Divider.createBorderSide(
+            context,
+            color: primaryColor,
+            width: 1.5,
+          ),
+        ),
         enabledBorder: inputBorder,
         fillColor: Colors.white10,
         filled: true,

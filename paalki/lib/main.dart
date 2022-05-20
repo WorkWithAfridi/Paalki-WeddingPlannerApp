@@ -9,7 +9,7 @@ void main() {
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      smartManagement: SmartManagement.onlyBuilder,
+      smartManagement: SmartManagement.keepFactory,
       theme: ThemeData(
         primaryColor: primaryColor,
         primarySwatch: Colors.pink,

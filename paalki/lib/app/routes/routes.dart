@@ -3,6 +3,9 @@ import 'package:paalki/app/modules/authentication/binding/authenticationModuleBi
 import 'package:paalki/app/modules/authentication/views/loginScreen.dart';
 import 'package:paalki/app/modules/authentication/views/otpScreen.dart';
 import 'package:paalki/app/modules/authentication/views/signupScreen.dart';
+import 'package:paalki/app/modules/home/binding/homeModuleBinding.dart';
+import 'package:paalki/app/modules/home/controllers/homeModuleController.dart';
+import 'package:paalki/app/modules/home/views/mainframe.dart';
 import 'package:paalki/app/modules/introduction/views/onBoardingScreen.dart';
 import 'package:paalki/app/modules/introduction/views/splashScreen.dart';
 
@@ -14,6 +17,7 @@ class ROUTES {
   static get getLoginScreenRoute => '/authentication/loginscreen';
   static get getSignupScreenRoute => '/authentication/signupscreen';
   static get getOtpScreenRoute => '/authentication/otpscreen';
+  static get getHomeScreenRoute => '/home/mainframe';
   static List<GetPage> routes = [
     GetPage(
         name: getSplashScreenRoute,
@@ -40,6 +44,12 @@ class ROUTES {
       name: getOtpScreenRoute,
       page: () => OtpVerificationScreen(),
       binding: AuthenticationModuleBinding(),
+      transition: Transition.rightToLeft,
+    ),
+    GetPage(
+      name: getHomeScreenRoute,
+      page: () => Mainframe(),
+      binding: HomeMobuleBinding(),
       transition: Transition.rightToLeft,
     ),
   ];

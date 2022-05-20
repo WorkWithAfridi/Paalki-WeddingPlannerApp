@@ -6,6 +6,7 @@ class AuthenticationModuleController extends GetxController {
   var rememberUserCredentials = false.obs;
   var showSignupButtonLoadingAnimation = false.obs;
   var showLoginButtonLoadingAnimation = false.obs;
+  var showOTPContinueButtonLoadingAnimation = false.obs;
 
   TextEditingController loginEmailTextEditingController =
       TextEditingController();
@@ -49,5 +50,12 @@ class AuthenticationModuleController extends GetxController {
 
   void moveToSignupScreen() {
     Get.toNamed(ROUTES.getSignupScreenRoute);
+  }
+
+  void onOTPContinueButtonClick()async{
+    showOTPContinueButtonLoadingAnimation.value = true;
+    await Future.delayed(Duration(seconds: 2));
+    Get.offAllNamed(ROUTES.getHomeScreenRoute);
+    showOTPContinueButtonLoadingAnimation.value = false;
   }
 }
