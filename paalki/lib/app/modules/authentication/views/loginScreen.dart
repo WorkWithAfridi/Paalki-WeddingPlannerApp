@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:paalki/app/modules/authentication/controllers/authenticationModuleController.dart';
+import 'package:paalki/app/widgets/customCircularProgressLoadingIndicator.dart';
 
 import '../../../data/constants.dart';
 import '../../../widgets/customAppBar.dart';
@@ -144,19 +145,26 @@ class LoginScreen extends StatelessWidget {
                       height: 15,
                     ),
                     InkWell(
-                      onTap: () {},
-                      child: Container(
-                        height: 50,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: primaryColor,
-                          borderRadius: BorderRadius.circular(7),
-                        ),
-                        alignment: Alignment.center,
-                        child: Text("Login",
-                            style: defaultBOLDTextStyle.copyWith(
-                                color: whiteColor)),
-                      ),
+                      onTap: controller.onLoginButtonClick,
+                      child: Obx(() {
+                        return Container(
+                          height: 50,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: primaryColor,
+                            borderRadius: BorderRadius.circular(7),
+                          ),
+                          alignment: Alignment.center,
+                          child:
+                              controller.showLoginButtonLoadingAnimation.value
+                                  ? CustomCircularProgressLoadingIndicator()
+                                  : Text(
+                                      "Login",
+                                      style: defaultBOLDTextStyle.copyWith(
+                                          color: whiteColor),
+                                    ),
+                        );
+                      }),
                     ),
                     const SizedBox(
                       height: 15,

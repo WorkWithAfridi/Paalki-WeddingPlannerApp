@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 final primaryColor = Color(0xffFF3956);
-final blackColor = Color(0xff444444);
+final blackColor = Color(0xff191919);
 final greyColor = Color(0xff999999);
 final lightGreyColor = Color(0xffD9D9D9);
 final whiteColor = Color(0xffFCFCFC);
@@ -9,6 +9,7 @@ final whiteColor = Color(0xffFCFCFC);
 String appName = "PaalKi";
 
 Duration customDuration = Duration(milliseconds: 400);
+double customElevation = 4;
 
 TextStyle defaultBOLDTextStyle = const TextStyle(
   color: Colors.black,

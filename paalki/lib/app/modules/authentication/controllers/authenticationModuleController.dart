@@ -58,4 +58,11 @@ class AuthenticationModuleController extends GetxController {
     Get.offAllNamed(ROUTES.getHomeScreenRoute);
     showOTPContinueButtonLoadingAnimation.value = false;
   }
+
+  void onLoginButtonClick()async{
+    showLoginButtonLoadingAnimation.value = true;
+    await Future.delayed(Duration(seconds: 2));
+    Get.offAllNamed(ROUTES.getHomeScreenRoute);
+    showLoginButtonLoadingAnimation.value = false;
+  }
 }

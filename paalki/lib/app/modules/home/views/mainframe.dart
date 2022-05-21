@@ -71,7 +71,7 @@ class _MainframeState extends State<Mainframe> {
           // showUnselectedLabels: false,
           backgroundColor: whiteColor,
           type: BottomNavigationBarType.fixed,
-          elevation: 0,
+          elevation: customElevation,
           onTap: (value) {
             controller.mainframePageIndex.value = value;
             controller.mainframePageController.animateToPage(
