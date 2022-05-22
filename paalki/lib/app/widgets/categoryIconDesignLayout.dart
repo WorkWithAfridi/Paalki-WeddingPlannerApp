@@ -6,26 +6,35 @@ import '../data/constants.dart';
 class CategoryIconDesignLayout extends StatelessWidget {
   final IconData icon;
   final String title;
-  const CategoryIconDesignLayout(
-      {Key? key, required this.icon, required this.title})
-      : super(key: key);
+  bool showBiggerTile;
+  CategoryIconDesignLayout({
+    Key? key,
+    required this.icon,
+    required this.title,
+    this.showBiggerTile = false,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          height: Get.width / 6,
-          width: Get.width / 6,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            color: Colors.white,
-            border: Border.all(color: greyColor.withOpacity(.6)),
-          ),
-          child: Icon(
-            icon,
-            size: 20,
-            color: primaryColor,
+        Card(
+          elevation: customElevation,
+          shadowColor: greyColor.withOpacity(.3),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          child: Container(
+            height: showBiggerTile ? Get.width / 3.7 : Get.width / 6,
+            width: showBiggerTile ? Get.width / 3.7 : Get.width / 6,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
+              color: Colors.white,
+              // border: Border.all(color: greyColor.withOpacity(.6)),
+            ),
+            child: Icon(
+              icon,
+              size: 20,
+              color: primaryColor,
+            ),
           ),
         ),
         SizedBox(

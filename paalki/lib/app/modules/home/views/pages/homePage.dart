@@ -3,6 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:paalki/app/data/constants.dart';
+import 'package:paalki/app/modules/home/views/pages/categoriesPage.dart';
+import 'package:paalki/app/modules/home/views/pages/filtersPage.dart';
 import 'package:paalki/app/widgets/categoryIconDesignLayout.dart';
 import 'package:staggered_grid_view_flutter/widgets/staggered_grid_view.dart';
 import 'package:staggered_grid_view_flutter/widgets/staggered_tile.dart';
@@ -19,25 +21,8 @@ class HomePage extends StatelessWidget {
         physics: BouncingScrollPhysics(),
         child: Column(
           children: [
-            AppBar(
-              centerTitle: true,
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    'Dhaka',
-                    style: defaultNORMALTextStyle.copyWith(
-                      color: greyColor,
-                    ),
-                  ),
-                  Icon(
-                    FontAwesomeIcons.caretDown,
-                    color: greyColor,
-                    size: 15,
-                  )
-                ],
-              ),
+            SizedBox(
+              height: 5,
             ),
             Container(
               height: Get.width / 6 + 20,
@@ -74,12 +59,9 @@ class HomePage extends StatelessWidget {
                         width: 5,
                       ),
                       Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(
-                            height: 20,
-                          ),
                           Text(
                             "Hi, Afridi",
                             style: defaultNORMALTextStyle.copyWith(
@@ -90,9 +72,23 @@ class HomePage extends StatelessWidget {
                             "Welcome back!",
                             style: defaultBOLDTextStyle,
                           ),
-                          SizedBox(
-                            height: 20,
-                          )
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Dhaka',
+                                style: defaultNORMALTextStyle.copyWith(
+                                  color: greyColor,
+                                ),
+                              ),
+                              Icon(
+                                FontAwesomeIcons.caretDown,
+                                color: greyColor,
+                                size: 15,
+                              )
+                            ],
+                          ),
                         ],
                       )
                     ],
@@ -111,7 +107,7 @@ class HomePage extends StatelessWidget {
             //   height: 5,
             // ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal: 15),
               height: Get.width / 7,
               child: Row(
                 children: [
@@ -119,7 +115,7 @@ class HomePage extends StatelessWidget {
                     flex: 9,
                     child: Card(
                       elevation: customElevation,
-                      shadowColor: greyColor.withOpacity(.5),
+                      shadowColor: greyColor.withOpacity(.3),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
@@ -129,7 +125,7 @@ class HomePage extends StatelessWidget {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
                           // color: Colors.grey.withOpacity(.05),
-                          border: Border.all(color: greyColor),
+                          // border: Border.all(color: greyColor),
                         ),
                         child: Row(
                           children: [
@@ -155,26 +151,31 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
                   Flexible(
                     flex: 2,
-                    child: Card(
-                      elevation: customElevation,
-                      shadowColor: primaryColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8)),
-                      child: Container(
-                        height: double.infinity,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: primaryColor,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Icon(
-                          FontAwesomeIcons.sliders,
-                          color: whiteColor,
+                    child: GestureDetector(
+                      onTap: () {
+                        Get.to(() => FiltersPage());
+                      },
+                      child: Card(
+                        elevation: customElevation,
+                        shadowColor: primaryColor,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8)),
+                        child: Container(
+                          height: double.infinity,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: primaryColor,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Icon(
+                            FontAwesomeIcons.sliders,
+                            color: whiteColor,
+                          ),
                         ),
                       ),
                     ),
@@ -193,9 +194,14 @@ class HomePage extends StatelessWidget {
                     'Categories',
                     style: defaultBOLDTextStyle,
                   ),
-                  Text(
-                    'See all',
-                    style: defaultNORMALTextStyle.copyWith(color: greyColor),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(() => CategoriesPage());
+                    },
+                    child: Text(
+                      'See all',
+                      style: defaultNORMALTextStyle.copyWith(color: greyColor),
+                    ),
                   ),
                 ],
               ),
@@ -204,13 +210,13 @@ class HomePage extends StatelessWidget {
               height: 10,
             ),
             Container(
-              height: Get.width / 6 + 20,
+              height: Get.width / 6 + 30,
               width: Get.width,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
                 physics: BouncingScrollPhysics(),
-                children: const [
+                children: [
                   SizedBox(
                     width: 20,
                   ),
@@ -218,50 +224,50 @@ class HomePage extends StatelessWidget {
                     icon: FontAwesomeIcons.gift,
                     title: "Packages",
                   ),
-                  SizedBox(
-                    width: 10,
+                  const SizedBox(
+                    width: 5,
                   ),
                   CategoryIconDesignLayout(
                     icon: FontAwesomeIcons.angellist,
                     title: "Decoration",
                   ),
-                  SizedBox(
-                    width: 10,
+                  const SizedBox(
+                    width: 5,
                   ),
                   CategoryIconDesignLayout(
                     icon: FontAwesomeIcons.angellist,
                     title: "Venue",
                   ),
-                  SizedBox(
-                    width: 10,
+                  const SizedBox(
+                    width: 5,
                   ),
                   CategoryIconDesignLayout(
                     icon: FontAwesomeIcons.angellist,
                     title: "Rent Car",
                   ),
-                  SizedBox(
-                    width: 10,
+                  const SizedBox(
+                    width: 5,
                   ),
                   CategoryIconDesignLayout(
                     icon: FontAwesomeIcons.angellist,
                     title: "Parlour",
                   ),
-                  SizedBox(
-                    width: 10,
+                  const SizedBox(
+                    width: 5,
                   ),
                   CategoryIconDesignLayout(
                     icon: FontAwesomeIcons.angellist,
                     title: "Chef",
                   ),
-                  SizedBox(
-                    width: 10,
+                  const SizedBox(
+                    width: 5,
                   ),
                   CategoryIconDesignLayout(
                     icon: FontAwesomeIcons.angellist,
                     title: "Photographer",
                   ),
-                  SizedBox(
-                    width: 10,
+                  const SizedBox(
+                    width: 5,
                   ),
                   CategoryIconDesignLayout(
                     icon: FontAwesomeIcons.angellist,
@@ -320,6 +326,7 @@ class HomePage extends StatelessWidget {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8),
                               ),
+                              shadowColor: shadowColor,
                               child: Container(
                                 height: 200,
                                 width: 150,
@@ -483,6 +490,7 @@ class HomePage extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
+                    shadowColor: shadowColor,
                     child: Container(
                       height: 100,
                       child: Row(
@@ -621,6 +629,7 @@ class HomePage extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
+                      shadowColor: shadowColor,
                       child: Column(
                         children: [
                           Flexible(

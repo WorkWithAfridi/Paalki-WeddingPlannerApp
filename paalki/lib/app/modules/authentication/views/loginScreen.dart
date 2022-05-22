@@ -89,57 +89,60 @@ class LoginScreen extends StatelessWidget {
                     const SizedBox(
                       height: 3,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Obx(() {
-                          return SizedBox(
-                            height: 30,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                SizedBox(
-                                  width: 20,
-                                  child: Checkbox(
-                                    value: controller
-                                        .rememberUserCredentials.value,
-                                    activeColor: primaryColor,
-                                    onChanged: (value) {
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Obx(() {
+                            return SizedBox(
+                              height: 30,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  SizedBox(
+                                    width: 20,
+                                    child: Checkbox(
+                                      value: controller
+                                          .rememberUserCredentials.value,
+                                      activeColor: primaryColor,
+                                      onChanged: (value) {
+                                        controller.rememberUserCredentials.value =
+                                            value!;
+                                      },
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 3,
+                                  ),
+                                  InkWell(
+                                    onTap: () {
                                       controller.rememberUserCredentials.value =
-                                          value!;
+                                          !controller
+                                              .rememberUserCredentials.value;
                                     },
+                                    splashColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    child: Text(
+                                      "Remember me",
+                                      style: defaultNORMALTextStyle.copyWith(
+                                          color: greyColor),
+                                    ),
                                   ),
-                                ),
-                                const SizedBox(
-                                  width: 3,
-                                ),
-                                InkWell(
-                                  onTap: () {
-                                    controller.rememberUserCredentials.value =
-                                        !controller
-                                            .rememberUserCredentials.value;
-                                  },
-                                  splashColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  child: Text(
-                                    "Remember me",
-                                    style: defaultNORMALTextStyle.copyWith(
-                                        color: greyColor),
-                                  ),
-                                ),
-                              ],
+                                ],
+                              ),
+                            );
+                          }),
+                          InkWell(
+                            child: Text(
+                              "Forgot Password?",
+                              style: defaultBOLDTextStyle.copyWith(
+                                  color: primaryColor),
                             ),
-                          );
-                        }),
-                        InkWell(
-                          child: Text(
-                            "Forgot Password?",
-                            style: defaultBOLDTextStyle.copyWith(
-                                color: primaryColor),
-                          ),
-                        )
-                      ],
+                          )
+                        ],
+                      ),
                     ),
                     const SizedBox(
                       height: 15,

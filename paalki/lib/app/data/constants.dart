@@ -5,6 +5,7 @@ final blackColor = Color(0xff191919);
 final greyColor = Color(0xff999999);
 final lightGreyColor = Color(0xffD9D9D9);
 final whiteColor = Color(0xffFCFCFC);
+final shadowColor = greyColor.withOpacity(.3);
 
 String appName = "PaalKi";
 

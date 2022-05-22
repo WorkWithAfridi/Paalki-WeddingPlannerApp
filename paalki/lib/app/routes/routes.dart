@@ -27,30 +27,31 @@ class ROUTES {
       name: getOnboardingScreenRoute,
       page: () => OnBoardingScreen(),
       binding: IntroductionModuleBinding(),
+      transition: Transition.downToUp,
     ),
     GetPage(
       name: getLoginScreenRoute,
       page: () => LoginScreen(),
       binding: AuthenticationModuleBinding(),
-      transition: Transition.rightToLeft,
+      transition: Transition.downToUp,
     ),
     GetPage(
       name: getSignupScreenRoute,
       page: () => SignupScreen(),
       binding: AuthenticationModuleBinding(),
-      transition: Transition.rightToLeft,
+      transition: Transition.downToUp,
     ),
     GetPage(
       name: getOtpScreenRoute,
       page: () => OtpVerificationScreen(),
       binding: AuthenticationModuleBinding(),
-      transition: Transition.rightToLeft,
+      transition: Transition.downToUp,
     ),
     GetPage(
       name: getHomeScreenRoute,
       page: () => Mainframe(),
       binding: HomeMobuleBinding(),
-      transition: Transition.rightToLeft,
+      transition: Transition.downToUp,
     ),
   ];
 }

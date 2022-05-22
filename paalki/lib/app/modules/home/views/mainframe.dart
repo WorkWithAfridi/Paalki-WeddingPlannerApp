@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:paalki/app/modules/home/controllers/homeModuleController.dart';
-import 'package:paalki/app/modules/home/views/homePage.dart';
+import 'package:paalki/app/modules/home/views/pages/homePage.dart';
 
 import '../../../data/constants.dart';
 
