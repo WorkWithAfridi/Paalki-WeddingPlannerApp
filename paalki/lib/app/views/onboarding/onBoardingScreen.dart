@@ -4,9 +4,9 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../../data/constants.dart';
-import '../../../widgets/customAppBar.dart';
-import '../controllers/introductionModuleController.dart';
+import '../../data/constants.dart';
+import '../../widgets/customAppBar.dart';
+import '../../controllers/introductionModuleController.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   OnBoardingScreen({Key? key}) : super(key: key);

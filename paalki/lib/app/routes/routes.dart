@@ -1,23 +1,21 @@
 import 'package:get/get.dart';
-import 'package:paalki/app/modules/authentication/binding/authenticationModuleBinding.dart';
-import 'package:paalki/app/modules/authentication/views/loginScreen.dart';
-import 'package:paalki/app/modules/authentication/views/otpScreen.dart';
-import 'package:paalki/app/modules/authentication/views/signupScreen.dart';
-import 'package:paalki/app/modules/home/binding/homeModuleBinding.dart';
-import 'package:paalki/app/modules/home/controllers/homeModuleController.dart';
-import 'package:paalki/app/modules/home/views/mainframe.dart';
-import 'package:paalki/app/modules/introduction/views/onBoardingScreen.dart';
-import 'package:paalki/app/modules/introduction/views/splashScreen.dart';
+import 'package:paalki/app/controllers/bindings/authenticationModuleBinding.dart';
+import 'package:paalki/app/views/auth/loginScreen.dart';
+import 'package:paalki/app/views/auth/otpScreen.dart';
+import 'package:paalki/app/views/auth/signupScreen.dart';
+import 'package:paalki/app/controllers/bindings/homeModuleBinding.dart';
+import 'package:paalki/app/controllers/homeModuleController.dart';
+import 'package:paalki/app/views/homeScreen.dart';
+import 'package:paalki/app/views/onboarding/onBoardingScreen.dart';
+import 'package:paalki/app/views/onboarding/splashScreen.dart';
 
-import '../modules/introduction/binding/introductionModuleBinding.dart';
+import '../controllers/bindings/introductionModuleBinding.dart';
 
 class ROUTES {
-  static get getSplashScreenRoute => '/introduction/splashscreen';
-  static get getOnboardingScreenRoute => '/introduction/onboardingscreen';
-  static get getLoginScreenRoute => '/authentication/loginscreen';
-  static get getSignupScreenRoute => '/authentication/signupscreen';
-  static get getOtpScreenRoute => '/authentication/otpscreen';
-  static get getHomeScreenRoute => '/home/mainframe';
+  static get getSplashScreenRoute => '/views/onboarding/splashscreen';
+  static get getOnboardingScreenRoute => '/views/onboarding/onboardingscreen';
+  static get getLoginScreenRoute => '/views/auth/loginscreen';
+  static get getHomeScreenRoute => '/home/homescreen';
   static List<GetPage> routes = [
     GetPage(
         name: getSplashScreenRoute,
@@ -27,31 +25,16 @@ class ROUTES {
       name: getOnboardingScreenRoute,
       page: () => OnBoardingScreen(),
       binding: IntroductionModuleBinding(),
-      transition: Transition.downToUp,
     ),
     GetPage(
       name: getLoginScreenRoute,
       page: () => LoginScreen(),
       binding: AuthenticationModuleBinding(),
-      transition: Transition.downToUp,
-    ),
-    GetPage(
-      name: getSignupScreenRoute,
-      page: () => SignupScreen(),
-      binding: AuthenticationModuleBinding(),
-      transition: Transition.downToUp,
-    ),
-    GetPage(
-      name: getOtpScreenRoute,
-      page: () => OtpVerificationScreen(),
-      binding: AuthenticationModuleBinding(),
-      transition: Transition.downToUp,
     ),
     GetPage(
       name: getHomeScreenRoute,
       page: () => Mainframe(),
       binding: HomeMobuleBinding(),
-      transition: Transition.downToUp,
     ),
   ];
 }

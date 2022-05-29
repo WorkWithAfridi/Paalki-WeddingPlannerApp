@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:paalki/app/routes/routes.dart';
+import 'package:paalki/app/views/auth/otpScreen.dart';
+import 'package:paalki/app/views/auth/signupScreen.dart';
 
 class AuthenticationModuleController extends GetxController {
   var rememberUserCredentials = false.obs;
@@ -40,7 +42,7 @@ class AuthenticationModuleController extends GetxController {
   void onSignupButtonClick() async {
     showSignupButtonLoadingAnimation.value = true;
     await Future.delayed(Duration(seconds: 2));
-    Get.toNamed(ROUTES.getOtpScreenRoute);
+    Get.to(() => OtpVerificationScreen());
     showSignupButtonLoadingAnimation.value = false;
   }
 
@@ -49,17 +51,17 @@ class AuthenticationModuleController extends GetxController {
   }
 
   void moveToSignupScreen() {
-    Get.toNamed(ROUTES.getSignupScreenRoute);
+    Get.to(() => SignupScreen());
   }
 
-  void onOTPContinueButtonClick()async{
+  void onOTPContinueButtonClick() async {
     showOTPContinueButtonLoadingAnimation.value = true;
     await Future.delayed(Duration(seconds: 2));
     Get.offAllNamed(ROUTES.getHomeScreenRoute);
     showOTPContinueButtonLoadingAnimation.value = false;
   }
 
-  void onLoginButtonClick()async{
+  void onLoginButtonClick() async {
     showLoginButtonLoadingAnimation.value = true;
     await Future.delayed(Duration(seconds: 2));
     Get.offAllNamed(ROUTES.getHomeScreenRoute);

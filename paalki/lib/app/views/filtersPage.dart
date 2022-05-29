@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:paalki/app/modules/home/controllers/homeModuleController.dart';
+import 'package:paalki/app/controllers/homeModuleController.dart';
 import 'package:paalki/app/widgets/customBackButton.dart';
 import 'package:paalki/app/widgets/filterBoxDesignLayout.dart';
 
-import '../../../../data/constants.dart';
-import '../../../../widgets/categoryIconDesignLayout.dart';
+import '../data/constants.dart';
+import '../widgets/categoryIconDesignLayout.dart';
 
 class FiltersPage extends StatelessWidget {
   FiltersPage({Key? key}) : super(key: key);

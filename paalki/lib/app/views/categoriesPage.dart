@@ -3,8 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:paalki/app/widgets/customBackButton.dart';
 
-import '../../../../data/constants.dart';
-import '../../../../widgets/categoryIconDesignLayout.dart';
+import '../data/constants.dart';
+import '../widgets/categoryIconDesignLayout.dart';
 
 class CategoriesPage extends StatelessWidget {
   const CategoriesPage({Key? key}) : super(key: key);

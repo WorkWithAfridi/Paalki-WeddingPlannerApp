@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:paalki/app/modules/authentication/controllers/authenticationModuleController.dart';
+import 'package:paalki/app/controllers/authenticationModuleController.dart';
 import 'package:paalki/app/widgets/customCircularProgressLoadingIndicator.dart';
 
-import '../../../data/constants.dart';
-import '../../../widgets/customAppBar.dart';
-import '../../../widgets/customTextField.dart';
+import '../../data/constants.dart';
+import '../../widgets/customAppBar.dart';
+import '../../widgets/customTextField.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({Key? key}) : super(key: key);

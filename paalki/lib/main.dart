@@ -14,7 +14,7 @@ void main() {
         primaryColor: primaryColor,
         primarySwatch: Colors.pink,
         fontFamily: "Lato",
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
           elevation: 0,

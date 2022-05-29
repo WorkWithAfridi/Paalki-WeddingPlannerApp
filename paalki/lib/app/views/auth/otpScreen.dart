@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:paalki/app/widgets/customCircularProgressLoadingIndicator.dart';
 
-import '../../../data/constants.dart';
-import '../../../widgets/customBackButton.dart';
-import '../../../widgets/customTextField.dart';
-import '../controllers/authenticationModuleController.dart';
+import '../../data/constants.dart';
+import '../../widgets/customBackButton.dart';
+import '../../widgets/customTextField.dart';
+import '../../controllers/authenticationModuleController.dart';
 
 class OtpVerificationScreen extends StatelessWidget {
   OtpVerificationScreen({Key? key}) : super(key: key);

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-import 'package:paalki/app/modules/home/controllers/homeModuleController.dart';
-import 'package:paalki/app/modules/home/views/pages/homePage.dart';
+import 'package:paalki/app/controllers/homeModuleController.dart';
+import 'package:paalki/app/views/homePage.dart';
 
-import '../../../data/constants.dart';
+import '../data/constants.dart';
 
 class Mainframe extends StatefulWidget {
   const Mainframe({Key? key}) : super(key: key);
