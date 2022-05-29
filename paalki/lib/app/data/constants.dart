@@ -19,8 +19,8 @@ TextStyle defaultBOLDTextStyle = const TextStyle(
   // fontFamily: "GrapeNuts",
 );
 
-TextStyle defaultNORMALTextStyle = const TextStyle(
-  color: Colors.black,
+TextStyle defaultNORMALTextStyle = TextStyle(
+  color: Colors.black.withOpacity(.8),
   fontSize: 14,
   fontWeight: FontWeight.normal,
   // fontFamily: "GrapeNuts",

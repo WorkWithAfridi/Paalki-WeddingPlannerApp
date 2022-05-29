@@ -23,7 +23,7 @@ class FiltersPage extends StatelessWidget {
         centerTitle: true,
         leading: CustomBackButton(),
       ),
-      body: Container(
+      body: SizedBox(
         height: Get.height,
         width: Get.width,
         child: Column(
@@ -45,51 +45,49 @@ class FiltersPage extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Container(
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                physics: BouncingScrollPhysics(),
-                child: Row(
-                  children: [
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    FilterBoxDesignLayout(title: "Packages", isSelected: false),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    FilterBoxDesignLayout(
-                        title: "Decoration", isSelected: false),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    FilterBoxDesignLayout(title: "Venue", isSelected: false),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    FilterBoxDesignLayout(title: "Rent Car", isSelected: false),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    FilterBoxDesignLayout(title: "Parlor", isSelected: false),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    FilterBoxDesignLayout(title: "Chef", isSelected: false),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    FilterBoxDesignLayout(
-                        title: "Photographer", isSelected: false),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    FilterBoxDesignLayout(title: "Shopping", isSelected: false),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                  ],
-                ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              physics: BouncingScrollPhysics(),
+              child: Row(
+                children: const [
+                  SizedBox(
+                    width: 20,
+                  ),
+                  FilterBoxDesignLayout(title: "Packages", isSelected: false),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  FilterBoxDesignLayout(
+                      title: "Decoration", isSelected: false),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  FilterBoxDesignLayout(title: "Venue", isSelected: false),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  FilterBoxDesignLayout(title: "Rent Car", isSelected: false),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  FilterBoxDesignLayout(title: "Parlor", isSelected: false),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  FilterBoxDesignLayout(title: "Chef", isSelected: false),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  FilterBoxDesignLayout(
+                      title: "Photographer", isSelected: false),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  FilterBoxDesignLayout(title: "Shopping", isSelected: false),
+                  SizedBox(
+                    width: 20,
+                  ),
+                ],
               ),
             ),
             SizedBox(
@@ -212,7 +210,7 @@ class FiltersPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Icon(
-                            FontAwesomeIcons.star,
+                            FontAwesomeIcons.solidStar,
                             color: primaryColor,
                             size: 12,
                           ),
@@ -245,7 +243,7 @@ class FiltersPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Icon(
-                            FontAwesomeIcons.star,
+                            FontAwesomeIcons.solidStar,
                             color: primaryColor,
                             size: 12,
                           ),
@@ -278,7 +276,7 @@ class FiltersPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Icon(
-                            FontAwesomeIcons.star,
+                            FontAwesomeIcons.solidStar,
                             color: primaryColor,
                             size: 12,
                           ),

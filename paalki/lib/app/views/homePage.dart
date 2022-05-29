@@ -5,6 +5,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:paalki/app/data/constants.dart';
 import 'package:paalki/app/views/categoriesPage.dart';
 import 'package:paalki/app/views/filtersPage.dart';
+import 'package:paalki/app/views/searchResultsScreen.dart';
 import 'package:paalki/app/widgets/categoryIconDesignLayout.dart';
 import 'package:staggered_grid_view_flutter/widgets/staggered_grid_view.dart';
 import 'package:staggered_grid_view_flutter/widgets/staggered_tile.dart';
@@ -113,40 +114,45 @@ class HomePage extends StatelessWidget {
                 children: [
                   Flexible(
                     flex: 9,
-                    child: Card(
-                      elevation: customElevation,
-                      shadowColor: greyColor.withOpacity(.3),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Container(
-                        height: double.infinity,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
+                    child: GestureDetector(
+                      onTap: () {
+                        Get.to(SearchResultsScreen());
+                      },
+                      child: Card(
+                        elevation: customElevation,
+                        shadowColor: greyColor.withOpacity(.3),
+                        shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
-                          // color: Colors.grey.withOpacity(.05),
-                          // border: Border.all(color: greyColor),
                         ),
-                        child: Row(
-                          children: [
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            const Icon(
-                              FontAwesomeIcons.magnifyingGlass,
-                              color: Colors.grey,
-                              size: 20,
-                            ),
-                            const SizedBox(
-                              width: 5,
-                            ),
-                            Text(
-                              "Search",
-                              style: defaultNORMALTextStyle.copyWith(
-                                color: greyColor,
+                        child: Container(
+                          height: double.infinity,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            // color: Colors.grey.withOpacity(.05),
+                            // border: Border.all(color: greyColor),
+                          ),
+                          child: Row(
+                            children: [
+                              const SizedBox(
+                                width: 10,
                               ),
-                            )
-                          ],
+                              const Icon(
+                                FontAwesomeIcons.magnifyingGlass,
+                                color: Colors.grey,
+                                size: 20,
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                "Search",
+                                style: defaultNORMALTextStyle.copyWith(
+                                  color: greyColor,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -681,7 +687,7 @@ class HomePage extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  Expanded(child: Container()),
+                                  const Expanded(child: SizedBox.shrink()),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:

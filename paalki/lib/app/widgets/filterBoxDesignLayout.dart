@@ -17,7 +17,7 @@ class FilterBoxDesignLayout extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       child: Container(
         width: 100,
-        height: 40,
+        height: 45,
         decoration: BoxDecoration(
           color: whiteColor,
           borderRadius: BorderRadius.circular(8),
