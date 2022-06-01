@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:paalki/app/controllers/homeModuleController.dart';
 import 'package:paalki/app/views/homePage.dart';
+import 'package:paalki/app/views/profileScreen.dart';
 
 import '../data/constants.dart';
 
@@ -73,12 +74,16 @@ class _MainframeState extends State<Mainframe> {
           type: BottomNavigationBarType.fixed,
           elevation: customElevation,
           onTap: (value) {
-            controller.mainframePageIndex.value = value;
-            controller.mainframePageController.animateToPage(
-              value,
-              duration: customDuration,
-              curve: Curves.linearToEaseOut,
-            );
+            if (value == 3) {
+              Get.to(() => ProfileScreen());
+            } else {
+              controller.mainframePageIndex.value = value;
+              controller.mainframePageController.animateToPage(
+                value,
+                duration: customDuration,
+                curve: Curves.linearToEaseOut,
+              );
+            }
           },
           currentIndex: controller.mainframePageIndex.value,
           items: [

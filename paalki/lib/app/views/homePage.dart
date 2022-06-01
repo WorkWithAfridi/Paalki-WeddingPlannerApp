@@ -5,6 +5,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:paalki/app/data/constants.dart';
 import 'package:paalki/app/views/categoriesPage.dart';
 import 'package:paalki/app/views/filtersPage.dart';
+import 'package:paalki/app/views/profileScreen.dart';
 import 'package:paalki/app/views/searchResultsScreen.dart';
 import 'package:paalki/app/widgets/categoryIconDesignLayout.dart';
 import 'package:staggered_grid_view_flutter/widgets/staggered_grid_view.dart';
@@ -33,25 +34,30 @@ class HomePage extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Card(
-                        elevation: customElevation,
-                        shadowColor: greyColor.withOpacity(.5),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Container(
-                          height: Get.width / 6,
-                          width: Get.width / 6,
-                          decoration: BoxDecoration(
+                      GestureDetector(
+                        onTap: () {
+                          Get.to(() => ProfileScreen());
+                        },
+                        child: Card(
+                          elevation: customElevation,
+                          shadowColor: greyColor.withOpacity(.5),
+                          shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
-                            color: Colors.grey.withOpacity(.1),
-                            border: Border.all(color: greyColor),
                           ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
-                            child: Image.network(
-                              'https://images.unsplash.com/photo-1633332755192-727a05c4013d?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160',
-                              fit: BoxFit.cover,
+                          child: Container(
+                            height: Get.width / 6,
+                            width: Get.width / 6,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: Colors.grey.withOpacity(.1),
+                              border: Border.all(color: greyColor),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.network(
+                                'https://images.unsplash.com/photo-1633332755192-727a05c4013d?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160',
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),
