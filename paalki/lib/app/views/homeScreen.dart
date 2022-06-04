@@ -3,8 +3,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:paalki/app/controllers/homeModuleController.dart';
-import 'package:paalki/app/views/favoritesScreen.dart';
+import 'package:paalki/app/views/favoritePage.dart';
 import 'package:paalki/app/views/homePage.dart';
+import 'package:paalki/app/views/notificationPage.dart';
 import 'package:paalki/app/views/profileScreen.dart';
 
 import '../data/constants.dart';
@@ -50,17 +51,8 @@ class _MainframeState extends State<Mainframe> {
         physics: NeverScrollableScrollPhysics(),
         children: [
           HomePage(),
-          FavoritesScreen(),
-          Container(
-            height: Get.height,
-            width: Get.width,
-            color: Colors.pink,
-          ),
-          Container(
-            height: Get.height,
-            width: Get.width,
-            color: Colors.green,
-          ),
+          FavoritePage(),
+          NotificationPage(),
         ],
       ),
       bottomNavigationBar: Obx(() {
